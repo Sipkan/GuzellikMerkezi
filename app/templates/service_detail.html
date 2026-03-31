@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}{{ service.title }} - Merkez Beauty Center{% endblock %}
+
+{% block content %}
+<!-- SERVICE HERO -->
+{% if service.slug == "Altın-oran-kaş" %}
+<section class="service-hero service-hero-video">
+    <video class="hero-video" autoplay loop muted playsinline>
+        <source src="/static/videos/eyebrow.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
+    <div class="hero-video-content">
+        <span class="service-hero-icon">{{ service.icon }}</span>
+        <h1>{{ service.title }}</h1>
+    </div>
+</section>
+{% else %}
+<section class="service-hero">
+    <span class="service-hero-icon">{{ service.icon }}</span>
+    <h1>{{ service.title }}</h1>
+</section>
+{% endif %}
+
+<!-- SERVICE INFO -->
+<section class="service-info">
+    <div class="service-description">
+        <h2>Bu hizmet hakkında</h2>
+        <p>{{ service.description }}</p>
+    </div>
+
+    <div class="service-highlights">
+        <h3>Ne sunuyoruz</h3>
+        <ul>
+            {% for item in service.highlights %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+<!-- BEFORE & AFTER GALLERY -->
+{% if service.before_after %}
+<section class="ba-section">
+    <h2>Öncesi & Sonrası</h2>
+    <p class="ba-subtitle">Danışanlarımızın yaşadıkları değişimleri görüntüleyin.</p>
+
+    <div class="ba-gallery">
+        {% for pair in service.before_after %}
+        <div class="ba-item">
+            <div class="ba-slider" style="--position: 50%">
+                <div class="ba-before">
+                    <img src="/static/images/services/{{ service.slug }}/{{ pair.before }}" alt="Before">
+                    <span class="ba-label ba-label-before">Öncesi</span>
+                </div>
+                <div class="ba-after">
+                    <img src="/static/images/services/{{ service.slug }}/{{ pair.after }}" alt="After">
+                    <span class="ba-label ba-label-after">Sonrası</span>
+                </div>
+                <input type="range" min="0" max="100" value="50" class="ba-range"
+                    oninput="this.parentElement.style.setProperty('--position', this.value + '%')">
+                <div class="ba-handle" style="left: 50%"></div>
+            </div>
+            {% if pair.caption %}
+            <p class="ba-caption">{{ pair.caption }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% else %}
+<section class="ba-section ba-empty">
+    <h2>Before & After</h2>
+    <p class="ba-subtitle">Gallery coming soon — stay tuned for amazing transformations!</p>
+</section>
+{% endif %}
+
+<div class="service-back">
+    <a href="/services" class="btn">← Bütün hizmetlere geri dönün</a>
+</div>
+
+<script>
+    // Sync the visual handle with the range input
+    document.querySelectorAll('.ba-range').forEach(function (range) {
+        range.addEventListener('input', function () {
+            var handle = this.parentElement.querySelector('.ba-handle');
+            if (handle) handle.style.left = this.value + '%';
+        });
+    });
+</script>
+{% endblock %}

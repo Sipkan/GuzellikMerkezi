@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin Dashboard - Merkez Beauty Center</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        .admin-container { max-width: 1200px; margin: 2rem auto; padding: 0 2rem; }
+        .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+        .admin-header h1 { font-size: 1.5rem; color: #2d2d2d; }
+        .admin-back { color: #666; text-decoration: none; font-size: 0.9rem; }
+        .admin-back:hover { color: #2d2d2d; }
+        .admin-table { width: 100%; border-collapse: collapse; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .admin-table th, .admin-table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #eee; }
+        .admin-table th { background: #2d2d2d; color: #fff; font-weight: 600; }
+        .admin-table tr:hover { background: #f9f9f9; }
+        .admin-empty { text-align: center; padding: 3rem; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>Callback Requests</h1>
+            <a href="/" class="admin-back">← Back to site</a>
+        </div>
+
+        {% if callbacks %}
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cb in callbacks %}
+                <tr>
+                    <td>{{ cb.created_at }}</td>
+                    <td>{{ cb.name }}</td>
+                    <td>{{ cb.phone }}</td>
+                    <td>{{ cb.email }}</td>
+                    <td>{{ cb.message }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p class="admin-empty">No callback requests yet.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

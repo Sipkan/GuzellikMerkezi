@@ -1,0 +1,21 @@
+{% extends "contact.html" %} {% block title %}Our Services - Merkez Beauty Center{% endblock %} {% block content %}
+<section class="page-content">
+    <h1>Our Services</h1>
+    <p> Sizlere çeşitli güzellikler ve kaliteli bir hizmet sunuyoruz. Daha fazla bilgi almak için hizmetin üstüne tıklayabilirsiniz.</p>
+
+    <div class="services-grid">
+        {% for s in services %}
+        <a href="/services/{{ s.slug }}" class="service-card {% if s.card_image %}service-card-has-bg{% endif %}">
+            {% if s.card_image %}
+            <img class="service-card-bg" src="/static/images/services/{{ s.slug }}/{{ s.card_image }}" alt="">
+            <div class="service-card-overlay"></div>
+            {% endif %}
+            <div class="service-card-content">
+                <h3>{{ s.title }}</h3>
+                <p>{{ s.short }}</p>
+                <span class="service-card-arrow">→</span>
+            </div>
+        </a> {% endfor %}
+    </div>
+</section>
+{% endblock %}
