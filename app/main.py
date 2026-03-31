@@ -108,7 +108,7 @@ async def submit_callback(
     if phone_digits.startswith("5"):
         phone_digits = "0" + phone_digits
 
-    if not re.fullmatch(r"05\d{10}", phone_digits):
+    if not re.fullmatch(r"05\d{9}", phone_digits):
         return RedirectResponse(url="/contact?phone_error=1", status_code=303)
 
     callback = CallbackRequestDB(
