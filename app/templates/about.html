@@ -147,9 +147,8 @@
   <h3>Güzellik ve Kalite hizmetlerimizi inceleyin.</h3>
   <div class="about-services-grid">
     {% for svc in all_services %}
-    {% set card_img = svc.card_image_url if svc.get('card_image_url') else '/static/images/services/' ~ svc.slug ~ '/' ~ (svc.card_image|default('card.jpg')) %}
     <a href="/services/{{ svc.slug }}" class="about-service-card about-service-card-has-bg">
-      <img class="about-service-card-bg" src="{{ card_img }}" alt="">
+      <img class="about-service-card-bg" src="/static/images/services/{{ svc.slug }}/{{ svc.card_image|default('card.jpg') }}" alt="">
       <div class="about-service-card-overlay"></div>
       <div class="about-service-card-content">
         <div class="about-service-icon">✦</div>

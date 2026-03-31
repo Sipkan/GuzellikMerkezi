@@ -1,12 +1,29 @@
-{% extends "base.html" %} {% block title %}Home - Merkez Beauty Center{% endblock %} {% block content %}
-<section class="hero">
-    <h1>Pınar Seda Sayan Güzellik Dünyası</h1>
-    <p>Mutluluğunuzun ve güzelliğinizin daimi noktası</p>
+{% extends "base.html" %} {% block title %}Ana Sayfa - Pınar Seda Sayan Güzellik Dünyası{% endblock %} {% block content %}
+
+
+<section class="index-hero">
+
+    <video autoplay muted loop playsinline class="hero-index-bg-video">
+        <source src="/static/videos/eyebrow.mp4" type="video/mp4" />
+
+    </video>
+
+    <div class="hero-index-bg-video-overlay"></div>
+
+    <div class="hero-index-bg-video-content">
+        <h1>Pınar Seda Sayan Güzellik Dünyası</h1>
+        <p>Mutluluğunuzun ve güzelliğinizin daimi noktası</p>
+    </div>
 </section>
 
 <section class="intro">
-    <h2>Discover Our Services</h2>
-    <p>We offer a wide range of beauty and wellness treatments to help you look and feel your best.</p>
-    <a href="/services" class="btn">View Our Services</a>
+<div class="services-header">
+    <div class="services-header-box">
+        <h1>Hizmetlerimiz</h1>
+        <div class="services-header-divider"></div>
+        <p>Sizlere çeşitli güzellikler ve kaliteli bir hizmet sunuyoruz.<br>Daha fazla bilgi almak için hizmetin üstüne tıklayabilirsiniz.</p>
+    </div>
+</div>
+
 </section>
 {% endblock %}

@@ -10,44 +10,44 @@ To add before/after photos:
 
 SERVICES = [
     {
-        "slug": "hair-care",
-        "title": "Hair Care & Styling",
-        "card_image": "card.jpg",
+        "slug": "lazer-epilasyon",
+        "title": "Lazer Epilasyon",
+        "card_image": "lazer-epilasyon.png",
         "card_image_url": "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80",
-        "short": "Professional cuts, coloring, and styling for every occasion.",
+        "short": "Kalıcı ve etkili lazer epilasyon ile pürüzsüz bir cilde kavuşun.",
         "description": (
-            "Our expert stylists deliver precision cuts, vibrant coloring, "
-            "balayage, keratin treatments, and bridal styling. Whether you want "
-            "a subtle refresh or a bold transformation, we tailor every service "
-            "to your hair type and personal style."
+            "Son teknoloji lazer cihazlarımız ile tüm vücut bölgelerinde kalıcı "
+            "epilasyon hizmeti sunuyoruz. Her cilt tipine uygun, güvenli ve ağrısız "
+            "uygulamalar ile istenmeyen tüylerden kalıcı olarak kurtulmanızı sağlıyoruz. "
+            "Uzman ekibimiz kişiye özel tedavi planı oluşturarak en etkili sonuçları garanti eder."
         ),
         "highlights": [
-            "Precision haircuts & layering",
-            "Color, highlights & balayage",
-            "Keratin smoothing treatments",
-            "Bridal & special-occasion updos",
+            "Son teknoloji lazer cihazları",
+            "Tüm vücut bölgelerine uygulama",
+            "Ağrısız & konforlu seanslar",
+            "Kişiye özel tedavi planı",
         ],
         "before_after": [
-            # {"before": "before_1.jpg", "after": "after_1.jpg", "caption": "Balayage transformation"},
+            # {"before": "before_1.jpg", "after": "after_1.jpg", "caption": "Lazer epilasyon sonuçları"},
         ],
     },
     {
-        "slug": "skin-care",
-        "title": "Skin Care & Facials",
-        "card_image": "card.jpg",
+        "slug": "cilt-bakimi",
+        "title": "Cilt Bakımı & Yüz Bakımı",
+        "card_image": "cilt-bakimi.png",
         "card_image_url": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80",
-        "short": "Rejuvenating facials and advanced skin treatments.",
+        "short": "Canlandırıcı yüz bakımları ve gelişmiş cilt tedavileri.",
         "description": (
-            "From deep-cleansing facials to anti-aging peels and hydration "
-            "therapy, our skin care menu addresses every concern. We use "
-            "premium products and the latest techniques to reveal your "
-            "skin's natural radiance."
+            "Derin temizlik yüz bakımından anti-aging peeling ve nemlendirme "
+            "tedavilerine kadar geniş bir cilt bakım menüsü sunuyoruz. "
+            "Premium ürünler ve en son tekniklerle cildinizin doğal "
+            "parlaklığını ortaya çıkarıyoruz."
         ),
         "highlights": [
-            "Deep-cleansing & hydrating facials",
-            "Chemical peels & microdermabrasion",
-            "Anti-aging & collagen treatments",
-            "Acne & pigmentation solutions",
+            "Derin temizlik & nemlendirici yüz bakımı",
+            "Kimyasal peeling & mikrodermabrazyon",
+            "Anti-aging & kolajen tedavileri",
+            "Akne & pigmentasyon çözümleri",
         ],
         "before_after": [],
     },
@@ -75,42 +75,42 @@ SERVICES = [
         ],
     },
     {
-        "slug": "massage",
-        "title": "Massage & Relaxation",
-        "card_image": "card.jpg",
+        "slug": "kilo-verme",
+        "title": "Kilo Verme İşlemleri",
+        "card_image": "kilo-verme.png",
         "card_image_url": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80",
-        "short": "Therapeutic massage to melt away stress and tension.",
+        "short": "Etkili ve sağlıklı yöntemlerle kilo vermenize yardımcı oluyoruz.",
         "description": (
-            "Unwind with our range of massage therapies — from Swedish and "
-            "deep tissue to hot stone and aromatherapy. Our trained therapists "
-            "customize every session to target your specific needs and restore "
-            "your body's balance."
+            "Profesyonel ekibimiz ile kişiye özel kilo verme programları sunuyoruz. "
+            "Bölgesel incelme, lipoliz, lenf drenaj ve diyet danışmanlığı gibi "
+            "kapsamlı hizmetlerimiz ile sağlıklı ve kalıcı sonuçlar elde etmenizi sağlıyoruz. "
+            "Her tedavi planı bireysel ihtiyaçlarınıza göre özelleştirilir."
         ),
         "highlights": [
-            "Swedish relaxation massage",
-            "Deep tissue & sports massage",
-            "Hot stone therapy",
-            "Aromatherapy sessions",
+            "Bölgesel incelme uygulamaları",
+            "Lipoliz & kavitasyon",
+            "Lenf drenaj masajı",
+            "Kişiye özel diyet danışmanlığı",
         ],
         "before_after": [],
     },
     {
-        "slug": "makeup",
-        "title": "Makeup & Beauty Consultations",
-        "card_image": "card.jpg",
+        "slug": "kalici-makyaj",
+        "title": "Kalıcı Makyaj",
+        "card_image": "kalici-makyaj.png",
         "card_image_url": "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=800&q=80",
-        "short": "Professional makeup and personalized beauty advice.",
+        "short": "Doğal görünümlü kalıcı makyaj ile her an kusursuz olun.",
         "description": (
-            "Whether it's your wedding day, a photoshoot, or an evening out, "
-            "our makeup artists create flawless looks tailored to you. We also "
-            "offer one-on-one consultations to help you find the perfect "
-            "products and routines for your skin."
+            "Kalıcı makyaj hizmetimiz ile kaş, dudak ve eyeliner uygulamaları yapıyoruz. "
+            "Uzman ekibimiz yüz hatlarınıza en uygun renk ve şekli belirleyerek "
+            "doğal ve kusursuz bir görünüm elde etmenizi sağlar. Kalıcı makyaj ile "
+            "her sabah makyaja harcadığınız zamanı kazanın."
         ),
         "highlights": [
-            "Bridal & event makeup",
-            "Photoshoot & editorial looks",
-            "Personal beauty consultations",
-            "Skincare routine guidance",
+            "Kalıcı kaş kontürü",
+            "Dudak renklendirme",
+            "Kalıcı eyeliner",
+            "Doğal & kişiye özel renk seçimi",
         ],
         "before_after": [],
     },
