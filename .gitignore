@@ -1,3 +1,5 @@
 images/
 videos/
 /templates/video_backgorund_roadmap.md
+__pycache__/
+*.pyc
