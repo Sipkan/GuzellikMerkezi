@@ -55,7 +55,7 @@
                     </div>
                     <div class="Phone-box form-field">
                         <label for="phone">Telefon Numarası <span class="req" aria-hidden="true">*</span></label>
-                        <input type="tel" id="phone" name="phone" required autocomplete="tel" inputmode="tel" placeholder="0 (5xx) xxx xx xx" maxlength="17" pattern="0 \\(5[0-9]{2}\\) [0-9]{3} [0-9]{2} [0-9]{2}" title="0 (5xx) xxx xx xx" aria-describedby="phone-help">
+                        <input type="tel" id="phone" name="phone" required autocomplete="tel" inputmode="tel" placeholder="0 (5xx) xxx xx xx" maxlength="17" pattern="0 \(5[0-9]{2}\) [0-9]{3} [0-9]{2} [0-9]{2}" title="0 (5xx) xxx xx xx" aria-describedby="phone-help">
 
                     </div>
                     <div class="Email-box form-field">
@@ -174,7 +174,7 @@
                 return;
             }
 
-            const isValid = /^0\\s\\(5\\d{2}\\)\\s\\d{3}\\s\\d{2}\\s\\d{2}$/.test(phoneInput.value);
+            const isValid = /^0 \(5\d{2}\) \d{3} \d{2} \d{2}$/.test(phoneInput.value);
             phoneInput.setCustomValidity(isValid ? "" : "Geçerli GSM formatı: 0 (5xx) xxx xx xx");
         }
 
