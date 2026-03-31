@@ -27,8 +27,21 @@ body {
 header {
     background: #2d2d2d;
     padding: 0.4rem 2rem;
-    position: relative;
-    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    transition: transform 0.3s ease;
+}
+
+header.header-hidden {
+    transform: translateY(-100%);
+}
+
+/* Compensate for fixed header height */
+body {
+    padding-top: 83px;
 }
 
 /* NAV */
@@ -123,21 +136,7 @@ nav {
     }
 
     header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
         overflow: visible;
-        z-index: 999;
-        transition: transform 0.3s ease;
-    }
-
-    header.header-hidden {
-        transform: translateY(-100%);
-    }
-
-    body {
-        padding-top: 83px; /* compensate for fixed header height */
     }
 
     .nav-links {
