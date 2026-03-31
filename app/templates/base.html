@@ -175,6 +175,54 @@
             });
         });
     })();
+
+    // Smart sticky header: hide on scroll down, show on scroll up (mobile only)
+    (function() {
+        const header = document.querySelector('header');
+        if (!header) return;
+
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+
+        function onScroll() {
+            const currentScrollY = window.scrollY;
+            // Only apply on mobile-sized screens
+            if (window.innerWidth > 768) {
+                header.classList.remove('header-hidden');
+                lastScrollY = currentScrollY;
+                ticking = false;
+                return;
+            }
+
+            // Don't hide if near the very top
+            if (currentScrollY < 60) {
+                header.classList.remove('header-hidden');
+            }
+            // Scrolling DOWN → hide header
+            else if (currentScrollY > lastScrollY) {
+                header.classList.add('header-hidden');
+                // Also close the mobile menu if open
+                const menu = document.getElementById('nav-links');
+                const btn = document.getElementById('nav-hamburger');
+                if (menu) menu.classList.remove('open');
+                if (btn) { btn.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+            }
+            // Scrolling UP → show header
+            else {
+                header.classList.remove('header-hidden');
+            }
+
+            lastScrollY = currentScrollY;
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(onScroll);
+                ticking = true;
+            }
+        }, { passive: true });
+    })();
 </script>
 </body>
 
