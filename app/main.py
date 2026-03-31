@@ -37,19 +37,19 @@ app.mount("/static", StaticFiles(directory=str(BASE_DIR / "static")), name="stat
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
     """Main page."""
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(request, "index.html")
 
 
 @app.get("/about", response_class=HTMLResponse)
 async def about(request: Request):
     """About Us page."""
-    return templates.TemplateResponse("about.html", {"request": request})
+    return templates.TemplateResponse(request, "about.html")
 
 
 @app.get("/services", response_class=HTMLResponse)
 async def services(request: Request):
     """Our Services page."""
-    return templates.TemplateResponse("services.html", {"request": request, "services": SERVICES})
+    return templates.TemplateResponse(request, "services.html", {"services": SERVICES})
 
 
 @app.get("/services/{slug}", response_class=HTMLResponse)
@@ -59,13 +59,13 @@ async def service_detail(request: Request, slug: str):
     if not service:
         from fastapi.responses import JSONResponse
         return JSONResponse({"detail": "Service not found"}, status_code=404)
-    return templates.TemplateResponse("service_detail.html", {"request": request, "service": service})
+    return templates.TemplateResponse(request, "service_detail.html", {"service": service})
 
 
 @app.get("/contact", response_class=HTMLResponse)
 async def contact(request: Request):
     """Communication / Contact page."""
-    return templates.TemplateResponse("contact.html", {"request": request})
+    return templates.TemplateResponse(request, "contact.html")
 
 
 @app.get("/admin/adminDashboard", response_class=HTMLResponse)
@@ -89,10 +89,7 @@ async def admin_dashboard(
         }
         for cb in rows
     ]
-    return templates.TemplateResponse(
-        "admin_dashboard.html",
-        {"request": request, "callbacks": callbacks},
-    )
+    return templates.TemplateResponse(request, "admin_dashboard.html", {"callbacks": callbacks})
 
 
 @app.post("/callback")
