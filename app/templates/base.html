@@ -22,8 +22,15 @@
             <!-- SPACER -->
             <div class="nav-spacer"></div>
 
+            <!-- HAMBURGER (mobile only) -->
+            <button class="nav-hamburger" id="nav-hamburger" aria-label="Menüyü aç" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <!-- MENU -->
-            <ul class="nav-links">
+            <ul class="nav-links" id="nav-links">
                 <li><a href="/">Ana Sayfa</a></li>
                 <li><a href="/about">Hakkımızda</a></li>
                 <li><a href="/services">Hizmetlerimiz</a></li>
@@ -145,6 +152,30 @@
 </div>
 
     {% block scripts %}{% endblock %}
+
+<script>
+    // Mobile hamburger menu toggle
+    (function() {
+        const btn = document.getElementById('nav-hamburger');
+        const menu = document.getElementById('nav-links');
+        if (!btn || !menu) return;
+
+        btn.addEventListener('click', function() {
+            const isOpen = menu.classList.toggle('open');
+            btn.classList.toggle('open');
+            btn.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Close menu when a link is clicked
+        menu.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                menu.classList.remove('open');
+                btn.classList.remove('open');
+                btn.setAttribute('aria-expanded', 'false');
+            });
+        });
+    })();
+</script>
 </body>
 
 </html>
