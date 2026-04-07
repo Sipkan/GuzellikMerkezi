@@ -1,5 +1,24 @@
-images/
-videos/
-/templates/video_backgorund_roadmap.md
+# Environment & secrets
+.env
+.env.local
+
+# Virtual environment
+.venv/
+venv/
+
+# Python cache
 __pycache__/
 *.pyc
+*.pyo
+
+# IDE
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+
+# Old notes
+/templates/video_backgorund_roadmap.md
