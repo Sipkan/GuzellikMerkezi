@@ -33,7 +33,7 @@ SERVICES = [
     },
     {
         "slug": "cilt-bakimi",
-        "title": "Cilt Bakımı & Yüz Bakımı",
+        "title": "Cilt bakımı & Leke Protokolü",
         "card_image": "cilt-bakimi.png",
         "card_image_url": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80",
         "short": "Canlandırıcı yüz bakımları ve gelişmiş cilt tedavileri.",
