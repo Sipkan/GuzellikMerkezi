@@ -53,7 +53,7 @@ SERVICES = [
     },
     {
         "slug": "Altın-oran-kaş",
-        "title": "Altın Oran Kaş",
+        "title": "Altın Oran Kaş Tasarım",
         "card_image": "ButtonEyebrow.png",
         "card_image_url": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
         "short": "Perfectly shaped brows designed with the golden ratio technique.",
@@ -76,7 +76,7 @@ SERVICES = [
     },
     {
         "slug": "kilo-verme",
-        "title": "Kilo Verme İşlemleri",
+        "title": "Bölgesel İncelme",
         "card_image": "kilo-verme.png",
         "card_image_url": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80",
         "short": "Etkili ve sağlıklı yöntemlerle kilo vermenize yardımcı oluyoruz.",
