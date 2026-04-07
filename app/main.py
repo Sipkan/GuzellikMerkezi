@@ -120,3 +120,60 @@ async def submit_callback(
     session.add(callback)
     await session.flush()
     return RedirectResponse(url="/contact?submitted=1", status_code=303)
+
+
+# ================= SEO ROUTES =================
+
+@app.get("/robots.txt", response_class=HTMLResponse)
+async def robots_txt():
+    """Robots.txt for search engine crawlers."""
+    content = """User-agent: *
+Allow: /
+Disallow: /admin/
+
+Sitemap: https://www.pinarsedasayan.com/sitemap.xml
+"""
+    from fastapi.responses import Response
+    return Response(content=content, media_type="text/plain")
+
+
+@app.get("/sitemap.xml", response_class=HTMLResponse)
+async def sitemap_xml():
+    """XML Sitemap for search engines."""
+    from fastapi.responses import Response
+    from datetime import date
+
+    today = date.today().isoformat()
+    base_url = "https://www.pinarsedasayan.com"
+
+    # Static pages with priorities
+    pages = [
+        {"url": "/", "priority": "1.0", "changefreq": "weekly"},
+        {"url": "/about", "priority": "0.8", "changefreq": "monthly"},
+        {"url": "/services", "priority": "0.9", "changefreq": "weekly"},
+        {"url": "/contact", "priority": "0.7", "changefreq": "monthly"},
+    ]
+
+    # Add all service detail pages
+    for service in SERVICES:
+        pages.append({
+            "url": f"/services/{service['slug']}",
+            "priority": "0.8",
+            "changefreq": "monthly",
+        })
+
+    xml_entries = []
+    for page in pages:
+        xml_entries.append(f"""  <url>
+    <loc>{base_url}{page['url']}</loc>
+    <lastmod>{today}</lastmod>
+    <changefreq>{page['changefreq']}</changefreq>
+    <priority>{page['priority']}</priority>
+  </url>""")
+
+    xml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{chr(10).join(xml_entries)}
+</urlset>"""
+
+    return Response(content=xml, media_type="application/xml")

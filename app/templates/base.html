@@ -6,8 +6,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Pınar Seda Sayan Güzellik Dünyası{% endblock %}</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{% block meta_description %}Pınar Seda Sayan Güzellik Dünyası - Eyüpsultan, İstanbul'da lazer epilasyon, cilt bakımı, altın oran kaş, kalıcı makyaj ve kilo verme hizmetleri. 10+ yıllık tecrübe ile güzelliğinize değer katıyoruz.{% endblock %}">
+    <meta name="keywords" content="{% block meta_keywords %}güzellik merkezi, güzellik salonu, lazer epilasyon, cilt bakımı, altın oran kaş, kalıcı makyaj, kilo verme, Eyüpsultan, İstanbul, Pınar Seda Sayan, güzellik dünyası, yüz bakımı, epilasyon{% endblock %}">
+    <meta name="author" content="Pınar Seda Sayan Güzellik Dünyası">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2d2d2d">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{% block canonical %}https://www.pinarsedasayan.com{{ request.url.path }}{% endblock %}">
+
+    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}Pınar Seda Sayan Güzellik Dünyası{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Eyüpsultan, İstanbul'da profesyonel güzellik hizmetleri. Lazer epilasyon, cilt bakımı, altın oran kaş, kalıcı makyaj ve daha fazlası.{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}/static/images/homepage-banner.png{% endblock %}">
+    <meta property="og:url" content="https://www.pinarsedasayan.com{{ request.url.path }}">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:site_name" content="Pınar Seda Sayan Güzellik Dünyası">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pınar Seda Sayan Güzellik Dünyası">
+    <meta name="twitter:description" content="Eyüpsultan, İstanbul'da profesyonel güzellik hizmetleri.">
+    <meta name="twitter:image" content="/static/images/homepage-banner.png">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="stylesheet" href="/static/css/style.css">
     {% block extra_head %}{% endblock %}
+
+    <!-- Structured Data: LocalBusiness (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BeautySalon",
+        "name": "Pınar Seda Sayan Güzellik Dünyası",
+        "description": "Eyüpsultan, İstanbul'da lazer epilasyon, cilt bakımı, altın oran kaş, kalıcı makyaj ve kilo verme hizmetleri sunan profesyonel güzellik merkezi.",
+        "url": "https://www.pinarsedasayan.com",
+        "telephone": "+905316049934",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Alibeyköy Mah. Vardar Bul. No:41A",
+            "addressLocality": "Eyüpsultan",
+            "addressRegion": "İstanbul",
+            "addressCountry": "TR"
+        },
+
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 41.075619580796705,
+            "longitude": 28.943069946109446
+        },
+        "image": "/static/images/logo.png",
+        "priceRange": "₺₺",
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "09:00",
+                "closes": "19:00"
+            }
+        ],
+        "sameAs": [
+            "https://www.instagram.com/pinar.sedasayan/"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Güzellik Hizmetleri",
+            "itemListElement": [
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Lazer Epilasyon"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cilt Bakımı & Yüz Bakımı"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Altın Oran Kaş Tasarımı"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Bölgesel İncelme"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Kalıcı Makyaj"}}
+            ]
+        }
+    }
+    </script>
+    {% block extra_structured_data %}{% endblock %}
 </head>
 
 <body>

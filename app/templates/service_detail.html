@@ -1,4 +1,35 @@
-{% extends "base.html" %} {% block title %}{{ service.title }} - Pınar Seda Sayan Güzellik Dünyası{% endblock %} {% block content %}
+{% extends "base.html" %}
+{% block title %}{{ service.title }} - Pınar Seda Sayan Güzellik Dünyası | {{ service.title }} Hizmeti{% endblock %}
+{% block meta_description %}{{ service.description[:160] }}{% endblock %}
+{% block meta_keywords %}{{ service.title }}, {{ service.title }} İstanbul, {{ service.title }} Eyüpsultan, güzellik merkezi, Pınar Seda Sayan{% endblock %}
+{% block og_title %}{{ service.title }} - Pınar Seda Sayan Güzellik Dünyası{% endblock %}
+{% block og_description %}{{ service.short }}{% endblock %}
+{% block extra_structured_data %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "{{ service.title }}",
+    "description": "{{ service.short }}",
+    "provider": {
+        "@type": "BeautySalon",
+        "name": "Pınar Seda Sayan Güzellik Dünyası",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Alibeyköy Mah. Vardar Bul. No:41A",
+            "addressLocality": "Eyüpsultan",
+            "addressRegion": "İstanbul",
+            "addressCountry": "TR"
+        }
+    },
+    "areaServed": {
+        "@type": "City",
+        "name": "İstanbul"
+    }
+}
+</script>
+{% endblock %}
+{% block content %}
 <!-- SERVICE HERO -->
 {% if service.slug == "Altın-oran-kaş" %}
 <section class="service-hero service-hero-video">
