@@ -1,0 +1,208 @@
+{% extends "base.html" %}
+{% block title %}İletişim - Pınar Seda Sayan Güzellik Dünyası | Randevu & İletişim{% endblock %}
+{% block meta_description %}Pınar Seda Sayan Güzellik Dünyası ile iletişime geçin. Randevu almak, hizmetlerimiz hakkında bilgi almak veya sorularınızı iletmek için formumuzu doldurun. WhatsApp: +90 531 604 9934{% endblock %}
+{% block meta_keywords %}iletişim, randevu, güzellik merkezi Eyüpsultan, Pınar Seda Sayan iletişim, güzellik salonu randevu İstanbul, WhatsApp randevu{% endblock %}
+{% block og_title %}İletişim - Pınar Seda Sayan Güzellik Dünyası{% endblock %}
+{% block og_description %}Güzellik merkezimizle iletişime geçin, ücretsiz danışma randevunuzu alın. Eyüpsultan, İstanbul.{% endblock %}
+{% block content %}
+
+<section class="page-content">
+    <h1>Bizimle İletişime Geçin</h1>
+    <p>Aşağıdaki formu doldurduktan sonra ekibimiz sizinle en kısa süre içerisinde iletişime geçecektir.</p>
+
+    <!-- INFO CARDS -->
+    <div class="contact-cards">
+        <div class="contact-card contact-card-customer">
+            <div class="contact-card-icon">📞</div>
+            <h3>Kliniğimizde Yeni misiniz?</h3>
+            <p>Bir Danışma Rezervasyonu Yapmak veya Herhangi Bir Tedavimiz Hakkında Daha Fazla Bilgi Edinmek için.</p>
+            <a href="#callback-form" class="contact-card-link">İletişime Geç!</a>
+        </div>
+        <a class="contact-card contact-card-already" href="https://wa.me/905321797695" target="_blank" rel="noopener"
+            aria-label="WhatsApp ile iletisim">
+            <div class="contact-card-icon">☎️</div>
+            <h3>Zaten Müşterimiz misiniz?</h3>
+            <p>Herhangi Bir Sorunuz Varsa, Bir Tedavi Rezervasyonu Yaptırmanız veya İptal Etmeniz Gerekiyorsa.</p>
+            <strong class="contact-card-phone">WhatsApp: +90 532 179 7695</strong>
+        </a>
+        <div class="contact-card contact-card-sss">
+            <div class="contact-card-icon">💬</div>
+            <h3>Sıkça Sorulan Sorular</h3>
+            <p>Burada En Sık Sorulan Sorulardan Bazılarını Bulacaksınız.</p>
+            <a href="/about" class="contact-card-link">Sıkça Sorulan Sorulara Bakın</a>
+        </div>
+    </div>
+
+    <!-- İKİ SÜTUNLU BÖLÜM: FORM + GÖRSEL -->
+    <div class="contact-two-col">
+
+        <!-- SOL: FORM -->
+        <div class="contact-form-col">
+            <form action="/callback" method="post" class="callback-form" id="callback-form">
+                <div class="callback-form__header">
+                    <h2>Mesaj Gönder</h2>
+                    <p class="callback-form__sub">Formu doldurun, en kısa sürede size dönüş yapalım.</p>
+                </div>
+
+                {% if request.query_params.get('submitted') %}
+                <div class="success-message">
+                    Teşekkürler mesajınızı aldık. Ekibimiz sizinle en kısa zamanda iletişime geçecektir.
+                </div>
+                {% endif %} {% if request.query_params.get('phone_error') %}
+                <div class="form-error-message" role="alert">
+                    Lütfen geçerli bir telefon numarası girin: <strong>0 (5xx) xxx xx xx</strong>
+                </div>
+                {% endif %}
+
+                <div class="callback-form__grid">
+                    <div class="Name-box form-field">
+                        <label for="name">İsim Soyisim <span class="req" aria-hidden="true">*</span></label>
+                        <input type="text" id="name" name="name" required autocomplete="name" placeholder="Ad Soyad">
+                    </div>
+                    <div class="Phone-box form-field">
+                        <label for="phone">Telefon Numarası <span class="req" aria-hidden="true">*</span></label>
+                        <input type="tel" id="phone" name="phone" required autocomplete="tel" inputmode="tel" placeholder="0 (5xx) xxx xx xx" maxlength="17" pattern="0 \(5[0-9]{2}\) [0-9]{3} [0-9]{2} [0-9]{2}" title="0 (5xx) xxx xx xx" aria-describedby="phone-help">
+
+                    </div>
+                    <div class="Email-box form-field">
+                        <label for="email">Email <span class="req" aria-hidden="true"></span></label>
+                        <input type="email" id="email" name="email" placeholder="Mail adresiniz">
+                    </div>
+                    <div class="Message-box form-field callback-form__full">
+                        <label for="message">Mesajınız</label>
+                        <textarea id="message" name="message" rows="8" placeholder="Mesajınızı yazın…"></textarea>
+                    </div>
+                </div>
+
+                <div class="Alan-Box">
+                    * ile işaretlenmiş alanların doldurulması zorunludur.
+                </div>
+
+               <!-- Privacy Box with Expandable KVKK -->
+<div class="privacy-box">
+    <!-- Top Row: Checkbox + Label -->
+    <div class="privacy-box-top">
+        <input type="checkbox" id="acceptance" name="acceptance" value="1" required>
+        <label for="acceptance">
+            <a href="#" class="privacy-box-link" onclick="event.preventDefault(); event.stopPropagation(); toggleKvkkExpand();">Gizlilik Politikası</a>'nı okudum ve kabul ediyorum.
+        </label>
+    </div>
+
+    <!-- Expandable KVKK Content -->
+    <div class="kvkk-expand" id="kvkk-expand">
+        <div class="kvkk-expand-inner">
+            <div class="kvkk-notice">
+                Bu politika, iletişim formumuz aracılığıyla paylaştığınız kişisel verilerin 6698 sayılı KVKK kapsamında nasıl işlendiğini açıklamaktadır.
+            </div>
+
+            <h4>1. Veri Sorumlusu</h4>
+            <p>Pınar Seda Sayan Güzellik Dünyası olarak kişisel verilerinizin güvenliği konusunda azami hassasiyet göstermekteyiz.</p>
+
+            <h4>2. Toplanan Kişisel Veriler</h4>
+            <p>İletişim formumuz aracılığıyla yalnızca şu bilgiler toplanmaktadır:</p>
+            <ul>
+                <li><span class="kvkk-tag">Ad – Soyad</span> kimliğinizi doğrulayabilmek için</li>
+                <li><span class="kvkk-tag">Telefon Numarası</span> sizinle iletişime geçebilmek için</li>
+                <li><span class="kvkk-tag">E-posta Adresi</span> yazılı iletişim kurabilmek için</li>
+                <li><span class="kvkk-tag">Mesaj İçeriği</span> talebinizi anlayabilmek için</li>
+            </ul>
+
+            <h4>3. Verilerin Kullanım Amacı</h4>
+            <p>Verileriniz yalnızca talebinize geri dönüş sağlamak, randevu ve hizmet süreçlerini yönetmek amacıyla kullanılmaktadır.</p>
+
+            <h4>4. Veri Saklama Süresi</h4>
+            <p>İletişim bilgileriniz, talebiniz karşılandıktan sonra en fazla <strong>1 yıl</strong> saklanmakta, ardından güvenli biçimde silinmektedir.</p>
+
+            <h4>5. Veri Sahibinin Hakları</h4>
+            <p>KVKK'nın 11. maddesi uyarınca verilerinize erişme, düzeltme, silme ve işlemeye itiraz etme haklarına sahipsiniz.</p>
+
+            <h4>6. İletişim</h4>
+            <p>
+                📍 Alibeyköy Mah. Ihlamur Sok. No:19, Eyüpsultan, İstanbul<br>
+                📱 <a href="https://wa.me/905316049934" style="color:#8b6147; text-underline-offset:3px;">+90 531 604 99 34</a>
+            </p>
+        </div>
+    </div>
+</div>
+  
+  <button class="Request-button" type="submit">Mesajı Gönder</button>
+  </form>
+        </div>
+  
+        <!-- SAĞ: GÖRSEL (tablet/mobilde gizlenir) -->
+        <div class="contact-image-col">
+            <img src="/static/images/contact-us-img.webp" alt="Merkez Beauty Center" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<script>
+    // KVKK Expand/Collapse Toggle
+    function toggleKvkkExpand() {
+        const expand = document.getElementById('kvkk-expand');
+        expand.classList.toggle('open');
+    }
+    (function() {
+        const phoneInput = document.getElementById("phone");
+        if (!phoneInput) return;
+
+        function normalizeDigits(raw) {
+            let digits = (raw || "").replace(/\D/g, "");
+
+            // Accept +90 / 90 prefixes by converting them to local 0XXXXXXXXXX.
+            if (digits.startsWith("90")) digits = "0" + digits.slice(2);
+            if (digits.startsWith("5")) digits = "0" + digits; // user typed without leading 0
+
+            return digits.slice(0, 11);
+        }
+
+        function formatTRGsm(digits) {
+            if (!digits) return "";
+            let out = digits.slice(0, 1); // "0"
+
+            if (digits.length >= 2) out += " (" + digits.slice(1, Math.min(4, digits.length));
+            if (digits.length >= 4) out += ")";
+
+            if (digits.length >= 5) out += " " + digits.slice(4, Math.min(7, digits.length));
+            if (digits.length >= 8) out += " " + digits.slice(7, Math.min(9, digits.length));
+            if (digits.length >= 10) out += " " + digits.slice(9, Math.min(11, digits.length));
+
+            return out;
+        }
+
+        function validateAndMask() {
+            const digits = normalizeDigits(phoneInput.value);
+            phoneInput.value = formatTRGsm(digits);
+
+            // Client-side GSM validation (still validated on server).
+            if (digits.length < 11) {
+                phoneInput.setCustomValidity("");
+                return;
+            }
+
+            const isValid = /^0 \(5\d{2}\) \d{3} \d{2} \d{2}$/.test(phoneInput.value);
+            phoneInput.setCustomValidity(isValid ? "" : "Geçerli GSM formatı: 0 (5xx) xxx xx xx");
+        }
+
+        phoneInput.addEventListener("input", validateAndMask);
+        phoneInput.addEventListener("blur", validateAndMask);
+        validateAndMask();
+    })();
+
+      const cards = document.querySelectorAll('.contact-card');
+
+    cards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            // Eğer kullanıcı zaten linke tıklamışsa tekrar yönlendirmeyi engelle
+            if(e.target.tagName.toLowerCase() === 'a') return;
+
+            // Kart içindeki linki bul
+            const link = card.querySelector('.contact-card-link');
+            if(link) {
+                // Linke tıklama simülasyonu
+                link.click();
+            }
+        });
+    });
+</script>
+{% endblock %}

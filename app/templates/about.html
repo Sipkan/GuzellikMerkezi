@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% block title %}Hakkımızda - Pınar Seda Sayan Güzellik Dünyası | Biz Kimiz{% endblock %}
+{% block meta_description %}Pınar Seda Sayan Güzellik Dünyası hakkında bilgi edinin. 2010'dan bu yana Eyüpsultan, İstanbul'da profesyonel güzellik hizmetleri sunuyoruz. 10.000+ mutlu danışan, uzman kadro ve kaliteli hizmet anlayışı.{% endblock %}
+{% block meta_keywords %}hakkımızda, Pınar Seda Sayan, güzellik merkezi hikayesi, Eyüpsultan güzellik salonu, İstanbul güzellik merkezi, profesyonel güzellik ekibi{% endblock %}
+{% block og_title %}Hakkımızda - Pınar Seda Sayan Güzellik Dünyası{% endblock %}
+{% block og_description %}2010'dan bu yana Eyüpsultan, İstanbul'da güzelliğinizin adresi. Uzman kadromuz ve kaliteli hizmet anlayışımızla sizlere en iyisini sunuyoruz.{% endblock %}
+{% block extra_head %}
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<!-- Hero Section -->
+<section class="about-hero">
+  <div class="about-hero-overlay"></div>
+  <div class="about-hero-content">
+    <div class="about-hero-image">
+      <img src="/static/images/logo.png?v=2" alt="Pınar Seda Sayan Güzellik Dünyası" class="about-hero-logo">
+    </div>
+    <div class="about-hero-text">
+      <h1>Pınar Seda Sayan Güzellik Dünyası</h1>
+      <p class="about-hero-tagline">Mutluluğunuzun ve güzelliğinizin daimi noktası</p>
+      <div class="about-hero-social">
+        <a href="https://wa.me/905321797695" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+        <a href="https://www.instagram.com/pinar.sedasayan/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Who We Are Section -->
+<section class="about-who" id="who-we-are" style="--about-who-bg: url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1600&q=80');">
+  <div class="about-who-inner">
+    <div class="about-who-content">
+      <h2>BİZ KİMİZ?</h2>
+      <h3>Pınar Seda Sayan Güzellik Dünyası — Güzelliğinizin Adresi</h3>
+      <p>
+          2010 yılından bu yana edindiğimiz sektör tecrübesini, 2018 yılında açtığımız güzellik merkezimiz ile siz değerli danışanlarımızın hizmetine sunmaktayız.
+          Kurulduğumuz günden itibaren kalite odaklı hizmet anlayışımızı benimseyerek, danışan memnuniyetini her zaman ön planda tutuyoruz.
+          Alanında uzman ekibimiz ve sürekli gelişimi hedefleyen yaklaşımımız ile sizlere en iyi hizmeti sunmayı amaçlıyoruz.
+          Güzellik ve bakım alanındaki hizmetlerimizi her geçen gün geliştirerek, sizlerle birlikte büyümeyi ve sektörde kalıcı bir yer edinmeyi hedefliyoruz.
+      </p>
+
+      <p>
+          Saç bakımı ve şekillendirmeden, ileri düzey cilt bakımlarına, masaj terapilerine ve Altın Oran Kaş Tasarımı gibi özel uygulamalara kadar, ihtiyaçlarınıza özel olarak tasarlanmış geniş bir hizmet yelpazesi sunuyoruz.
+          Her ziyaretinizi; yenilendiğiniz, tazelendiğiniz ve kendinizi en iyi hissettiğiniz ayrıcalıklı bir deneyime dönüştürmeyi amaçlıyoruz.
+      </p>
+
+      <div class="about-connect">
+        <a href="/contact" class="btn">Bizimle İletişime Geçin</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Statistics Section -->
+<section class="about-stats">
+  <div class="about-stats-inner">
+    <div class="stat-item">
+      <div class="stat-icon">★</div>
+      <div class="stat-content">
+        <span class="stat-number">10+</span>
+        <span class="stat-label">Yıllık tecrübe.</span>
+      </div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">♥</div>
+      <div class="stat-content">
+        <span class="stat-number">10000+</span>
+        <span class="stat-label">Mutlu danışan.</span>
+      </div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">✦</div>
+      <div class="stat-content">
+        <span class="stat-number">{{ all_services|length }}</span>
+        <span class="stat-label">Adet Hizmet</span>
+      </div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">◆</div>
+      <div class="stat-content">
+        <span class="stat-number">94%</span>
+        <span class="stat-label">Müşteri Memnuniyeti</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-carousel-studio">
+  <div class="about-carousel-studio__header">
+    <p class="about-carousel-studio__eyebrow"></p>
+    <h2 class="about-carousel-studio__title">Kalite <em>Tesadüf</em> Değildir</h2>
+  </div>
+  <div class="about-carousel-studio__track-wrapper">
+    <div class="about-carousel-studio__track">
+      <div class="about-carousel-studio__card">
+        <img class="about-carousel-studio__card-img" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=400&q=80" alt="Pınar Seda Sayan Güzellik Dünyası hizmeti">
+      </div>
+      <div class="about-carousel-studio__card">
+        <img class="about-carousel-studio__card-img" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=400&q=80" alt="Pınar Seda Sayan Güzellik Dünyası hizmeti">
+      </div>
+      <div class="about-carousel-studio__card">
+        <img class="about-carousel-studio__card-img" src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=400&q=80" alt="Pınar Seda Sayan Güzellik Dünyası hizmeti">
+      </div>
+      <div class="about-carousel-studio__card">
+        <img class="about-carousel-studio__card-img" src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=400&q=80" alt="Pınar Seda Sayan Güzellik Dünyası hizmeti">
+      </div>
+      <div class="about-carousel-studio__card">
+        <img class="about-carousel-studio__card-img" src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=400&q=80" alt="Pınar Seda Sayan Güzellik Dünyası hizmeti">
+      </div>
+      <div class="about-carousel-studio__card">
+        <img class="about-carousel-studio__card-img" src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=400&q=80" alt="Pınar Seda Sayan Güzellik Dünyası hizmeti">
+      </div>
+      <div class="about-carousel-studio__card">
+        <img class="about-carousel-studio__card-img" src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=400&q=80" alt="Pınar Seda Sayan Güzellik Dünyası hizmeti">
+      </div>
+      <div class="about-carousel-studio__card">
+        <img class="about-carousel-studio__card-img" src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=400&q=80" alt="Pınar Seda Sayan Güzellik Dünyası hizmeti">
+      </div>
+      <!-- Duplicate set for seamless loop -->
+      <div class="about-carousel-studio__card">
+        <img class="about-carousel-studio__card-img" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=400&q=80" alt="Pınar Seda Sayan Güzellik Dünyası hizmeti">
+      </div>
+      <div class="about-carousel-studio__card">
+        <img class="about-carousel-studio__card-img" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=400&q=80" alt="Pınar Seda Sayan Güzellik Dünyası hizmeti">
+      </div>
+      <div class="about-carousel-studio__card">
+        <img class="about-carousel-studio__card-img" src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=400&q=80" alt="Pınar Seda Sayan Güzellik Dünyası hizmeti">
+      </div>
+      <div class="about-carousel-studio__card">
+        <img class="about-carousel-studio__card-img" src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=400&q=80" alt="Pınar Seda Sayan Güzellik Dünyası hizmeti">
+      </div>
+      <div class="about-carousel-studio__card">
+        <img class="about-carousel-studio__card-img" src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=400&q=80" alt="Pınar Seda Sayan Güzellik Dünyası hizmeti">
+      </div>
+      <div class="about-carousel-studio__card">
+        <img class="about-carousel-studio__card-img" src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=400&q=80" alt="Pınar Seda Sayan Güzellik Dünyası hizmeti">
+      </div>
+      <div class="about-carousel-studio__card">
+        <img class="about-carousel-studio__card-img" src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=400&q=80" alt="Pınar Seda Sayan Güzellik Dünyası hizmeti">
+      </div>
+      <div class="about-carousel-studio__card">
+        <img class="about-carousel-studio__card-img" src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=400&q=80" alt="Pınar Seda Sayan Güzellik Dünyası hizmeti">
+      </div>
+    </div>
+  </div>
+  <div class="about-carousel-studio__footer">
+    <span class="about-carousel-studio__footer-line">Durdurmak için üzerine gelin</span>
+  </div>
+</section>
+<!-- Services Preview Section -->
+<section class="about-services" id="our-services">
+  <h2>SİZLERE NE VADEDİYORUZ.</h2>
+  <h3>Güzellik ve Kalite hizmetlerimizi inceleyin.</h3>
+  <div class="about-services-grid">
+    {% for svc in all_services %}
+    <a href="/services/{{ svc.slug }}" class="about-service-card about-service-card-has-bg">
+      <img class="about-service-card-bg" src="/static/images/services/{{ svc.slug }}/{{ svc.card_image|default('card.jpg') }}" alt="{{ svc.title }} - Pınar Seda Sayan Güzellik Dünyası">
+      <div class="about-service-card-overlay"></div>
+      <div class="about-service-card-content">
+        <div class="about-service-icon">✦</div>
+        <h4>{{ svc.title }}</h4>
+        <p>{{ svc.short }}</p>
+        <span class="about-service-arrow">→</span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  <div class="about-services-cta">
+    <a href="/services" class="btn">Bütün hizmetleri görüntüleyin</a>
+  </div>
+</section>
+{% endblock %}
