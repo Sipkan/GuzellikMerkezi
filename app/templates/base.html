@@ -186,13 +186,6 @@
 
         function onScroll() {
             const currentScrollY = window.scrollY;
-            // Only apply on mobile-sized screens
-            if (window.innerWidth > 768) {
-                header.classList.remove('header-hidden');
-                lastScrollY = currentScrollY;
-                ticking = false;
-                return;
-            }
 
             // Don't hide if near the very top
             if (currentScrollY < 60) {

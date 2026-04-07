@@ -484,6 +484,232 @@ footer {
 }
 
 
+/* ================= HERO COMBINED (Title + Services) ================= */
+
+.hero-combined {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 0;
+    border-radius: 14px;
+}
+
+/* Background image — clearly visible */
+.hero-combined-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/static/images/homepage-banner.png') center center / cover no-repeat;
+    z-index: 0;
+    border-radius: 14px;
+}
+
+/* Gradient overlay — solid on left for text, transparent on right so photo shows */
+.hero-combined-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(45, 45, 45, 0.88) 0%,
+        rgba(45, 45, 45, 0.72) 35%,
+        rgba(45, 45, 45, 0.35) 55%,
+        transparent 75%
+    );
+    z-index: 1;
+}
+
+/* Text content on the left */
+.hero-combined-content {
+    position: relative;
+    z-index: 2;
+    max-width: 560px;
+    padding: 3.5rem 4rem;
+    color: #fff;
+}
+
+.hero-combined-content h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    color: #f5efe6;
+    letter-spacing: 0.5px;
+}
+
+.hero-combined-subtitle {
+    font-size: 1.05rem;
+    color: #e8d5c4;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.hero-combined-divider {
+    width: 60px;
+    height: 2px;
+    background: #c4a882;
+    margin-bottom: 1.5rem;
+}
+
+.hero-combined-content h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #f5efe6;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.5px;
+}
+
+.hero-combined-desc {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #d4c4b0;
+    max-width: 420px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .hero-combined {
+        min-height: 400px;
+    }
+
+    .hero-combined-overlay {
+        background: linear-gradient(
+            to right,
+            rgba(45, 45, 45, 0.9) 0%,
+            rgba(45, 45, 45, 0.75) 50%,
+            rgba(45, 45, 45, 0.4) 100%
+        );
+    }
+
+    .hero-combined-content {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .hero-combined-content h1 {
+        font-size: 1.7rem;
+    }
+
+    .hero-combined-content h2 {
+        font-size: 1.3rem;
+    }
+}
+
+
+/* ================= HOMEPAGE BANNER ================= */
+
+.homepage-banner {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    min-height: 420px;
+    background: url('/static/images/homepage-banner.png') center right / cover no-repeat;
+    background-position: right 30%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 2rem;
+    border-radius: 14px;
+}
+
+/* Gradient overlay — visible on left, transparent on right so photo shows */
+.homepage-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(180, 148, 108, 0.92) 0%,
+        rgba(180, 148, 108, 0.75) 35%,
+        rgba(180, 148, 108, 0.3) 60%,
+        transparent 80%
+    );
+    z-index: 1;
+}
+
+/* Text content — positioned on the left */
+.homepage-banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 540px;
+    padding: 3.5rem 4rem;
+    color: #fff;
+}
+
+.homepage-banner-content h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 1.25rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #2d2d2d;
+}
+
+.homepage-banner-content p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #3d3025;
+    margin-bottom: 1.5rem;
+    max-width: 420px;
+}
+
+.homepage-banner-btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border: 2px solid #2d2d2d;
+    color: #2d2d2d;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.homepage-banner-btn:hover {
+    background: #2d2d2d;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .homepage-banner {
+        min-height: 340px;
+        background-position: center center;
+    }
+
+    .homepage-banner-overlay {
+        background: linear-gradient(
+            to right,
+            rgba(180, 148, 108, 0.93) 0%,
+            rgba(180, 148, 108, 0.8) 60%,
+            rgba(180, 148, 108, 0.5) 100%
+        );
+    }
+
+    .homepage-banner-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .homepage-banner-content h2 {
+        font-size: 1.6rem;
+    }
+}
+
+
 /* VIDEO HERO */
 
 /* Index page hero video */
@@ -2184,4 +2410,118 @@ footer {
     margin: 0;
     line-height: 1.7;
     font-size: 0.95rem;
+}
+
+
+/* ================= MINI-CARDS STRIP ================= */
+
+.mini-cards-strip {
+    margin-top: 10px;
+    margin-bottom: -20px;
+    height: 10vw;
+    width: 99vw;
+    margin-left: -49.5vw;
+    left: 50%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+/* Background image layer */
+.mini-cards-strip-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/static/images/contact-us-img.webp') center center / cover no-repeat;
+    z-index: 0;
+}
+
+/* Dark semi-transparent overlay */
+.mini-cards-strip-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+    z-index: 1;
+}
+
+/* Content row */
+.mini-cards-strip-content {
+    margin-top: 2.9vw;
+    margin-bottom: 2.9vw;
+    position: relative;
+    z-index: 2;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 0;
+}
+
+/* Each service item */
+.mini-card-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.1rem 1.6rem;
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: background 0.3s ease, color 0.3s ease;
+    white-space: nowrap;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.mini-card-item:last-child {
+    border-right: none;
+}
+
+.mini-card-item:hover {
+    background: rgba(196, 168, 130, 0.25);
+    color: #e8d5c4;
+}
+
+/* Icon before each label */
+.mini-card-icon {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mini-card-item:hover .mini-card-icon {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Label text */
+.mini-card-label {
+    font-family: Georgia, serif;
+}
+
+/* ---- MOBILE: stack mini-cards vertically ---- */
+@media (max-width: 768px) {
+    .mini-cards-strip-content {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .mini-card-item {
+        justify-content: center;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 0.9rem 1.2rem;
+    }
+
+    .mini-card-item:last-child {
+        border-bottom: none;
+    }
 }
