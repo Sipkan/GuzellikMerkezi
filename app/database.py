@@ -11,7 +11,7 @@ from app.db_models import Base
 
 engine = create_async_engine(
     settings.database_url,
-    echo=True,
+    echo=False,  # Disable SQL logging in production (prevents sensitive data in logs)
 )
 
 async_session_maker = async_sessionmaker(
