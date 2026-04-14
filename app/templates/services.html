@@ -2,15 +2,80 @@
 Cilt bakımı % Leke Protokolü, altın oran kaş tasarımı, kalıcı makyaj ve kilo verme işlemleri. Eyüpsultan, İstanbul.{% endblock %} {% block meta_keywords %}güzellik hizmetleri, lazer epilasyon İstanbul, Cilt bakımı % Leke Protokolü Eyüpsultan, altın oran
 kaş, kalıcı makyaj, kilo verme, bölgesel incelme, güzellik merkezi hizmetleri{% endblock %} {% block og_title %}Hizmetlerimiz - Pınar Seda Sayan Güzellik Dünyası{% endblock %} {% block og_description %}Lazer epilasyon, Cilt bakımı % Leke Protokolü, altın
 oran kaş, kalıcı makyaj ve kilo verme hizmetlerimizi inceleyin.{% endblock %} {% block content %}
-<section class="page-content">
 
-    <div class="services-header">
-        <div class="services-header-box">
-            <h1>Hizmetlerimiz</h1>
-            <div class="services-header-divider"></div>
-            <p>Sizlere çeşitli güzellikler ve kaliteli bir hizmet sunuyoruz.<br>Daha fazla bilgi almak için hizmetin üstüne tıklayabilirsiniz.</p>
-        </div>
+<!-- SERVICE HIGHLIGHTS SECTION -->
+<section class="sh-section">
+  <div class="sh-heading">
+    <span class="sh-eyebrow">Uzmanlık Alanlarımız</span>
+    <h2 class="sh-title">Güzelliğinizi <em>Özenle</em> Şekillendiriyoruz</h2>
+    <div class="sh-rule"><span class="sh-diamond"></span></div>
+  </div>
+
+  <div class="sh-grid">
+
+    <div class="sh-card">
+      <div class="sh-num">01</div>
+      <h3 class="sh-card-title">Lazer Epilasyon</h3>
+      <ul class="sh-list">
+        <li><span class="sh-tick"></span>En son teknoloji lazer cihazları</li>
+        <li><span class="sh-tick"></span>Tüm cilt ve kıl tiplerine uygun</li>
+        <li><span class="sh-tick"></span>Kalıcı ve güvenli sonuçlar</li>
+        <li><span class="sh-tick"></span>Uzman doktor gözetiminde</li>
+      </ul>
     </div>
+
+    <div class="sh-card">
+      <div class="sh-num">02</div>
+      <h3 class="sh-card-title">Cilt Bakımı &amp; Leke Protokolü</h3>
+      <ul class="sh-list">
+        <li><span class="sh-tick"></span>Kişiye özel cilt analizi</li>
+        <li><span class="sh-tick"></span>Leke ve kırışıklık tedavisi</li>
+        <li><span class="sh-tick"></span>Medikal peeling uygulamaları</li>
+        <li><span class="sh-tick"></span>Gençleştirici lazer protokolleri</li>
+      </ul>
+    </div>
+
+    <div class="sh-card">
+      <div class="sh-num">03</div>
+      <h3 class="sh-card-title">Altın Oran Kaş Tasarımı</h3>
+      <ul class="sh-list">
+        <li><span class="sh-tick"></span>Yüz hatlarına özel tasarım</li>
+        <li><span class="sh-tick"></span>Microblading &amp; Ombre tekniği</li>
+        <li><span class="sh-tick"></span>Doğal ve simetrik görünüm</li>
+        <li><span class="sh-tick"></span>Uzun süreli kalıcı sonuç</li>
+      </ul>
+    </div>
+
+    <div class="sh-card">
+      <div class="sh-num">04</div>
+      <h3 class="sh-card-title">Bölgesel İncelme</h3>
+      <ul class="sh-list">
+        <li><span class="sh-tick"></span>Botoks &amp; dolgu uygulamaları</li>
+        <li><span class="sh-tick"></span>PRP saç ve cilt tedavisi</li>
+        <li><span class="sh-tick"></span>Mezoterapi protokolleri</li>
+        <li><span class="sh-tick"></span>Güvenli klinik ortamı</li>
+      </ul>
+    </div>
+    
+    <div class="sh-card">
+      <div class="sh-num">05</div>
+      <h3 class="sh-card-title">Kalıcı Makyaj</h3>
+      <ul class="sh-list">
+        <li><span class="sh-tick"></span>Botoks &amp; dolgu uygulamaları</li>
+        <li><span class="sh-tick"></span>PRP saç ve cilt tedavisi</li>
+        <li><span class="sh-tick"></span>Mezoterapi protokolleri</li>
+        <li><span class="sh-tick"></span>Güvenli klinik ortamı</li>
+      </ul>
+    </div>
+
+
+  </div>
+
+  <div class="sh-cta">
+    <a href="/contact" class="sh-cta-btn"><span>Randevu Al</span></a>
+  </div>
+
+</section>
 
     <div class="services-grid">
         {% for s in services %}
@@ -26,5 +91,5 @@ oran kaş, kalıcı makyaj ve kilo verme hizmetlerimizi inceleyin.{% endblock %}
             </div>
         </a> {% endfor %}
     </div>
-</section>
+
 {% endblock %}
