@@ -436,13 +436,21 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: var(--space-lg);
+  background-color: #000000;
+      width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background: #111;
+    padding: 5rem 2rem 4rem;
+    margin-top: calc(-1 * var(--space-xl));
+    box-sizing: border-box;
+    margin-bottom:calc(-1 * var(--space-xl)) ;
 }
 
 .service-card {
   display: flex;
   flex-direction: column;
   padding: var(--space-xl) var(--space-lg);
-  background: #fff;
+  background: #000000;
   border: 1px solid var(--clr-cream-soft);
   border-radius: var(--radius-lg);
   text-decoration: none;
@@ -700,6 +708,7 @@ footer {
   overflow: hidden;
   margin-bottom: 0;
   border-radius: 14px 14px 0 0;
+  margin-top: calc(-1 * var(--space-xl));
 }
 
 .hero-combined-bg {
@@ -947,6 +956,7 @@ footer {
     width: 100%;
     height: 100%;
     z-index: 2;         /* bg'nin üstünde, içeriğin altında */
+    
 }
 
 /* Content row */
@@ -987,7 +997,7 @@ footer {
 .mini-card-item:hover {
     background: rgba(196, 168, 130, 0.25);
     color: #e8d5c4;
-    letter-spacing: 2.2px;
+    letter-spacing: 1px;
 }
 
 /* Icon before each label */
@@ -2928,4 +2938,261 @@ footer {
     .sh-card {
         padding: 1.75rem 1.5rem;
     }
+}/* ━━━━━━━━━━━━━━━━━━━━━━
+     DIVIDER BETWEEN SECTIONS - Düzeltilmiş Versiyon
+   ━━━━━━━━━━━━━━━━━━━━━━ */
+.section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    max-width: var(--max-width); /* Projendeki değişkeni kullandım */
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: #000000; /* Siyah arka plan */
+    
+}
+
+.section-divider::before, 
+.section-divider::after {
+    content: '';
+    flex: 1;
+    height: 2px; /* Daha zarif bir görünüm için 1px */
+    background: linear-gradient(
+        90deg, 
+        transparent, 
+        #c4a882, /* --clr-gold rengini doğrudan yazdım garanti olması için */
+        transparent
+    );
+    opacity: 0.6;
+}
+
+.section-divider .ornament {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.section-divider .ornament span {
+    display: block;
+    width: 6px;
+    height: 6px;
+    /* Değişkenin çalışmama ihtimaline karşı doğrudan renk verdim */
+    background-color: #c4a882; 
+    transform: rotate(45deg);
+    opacity: 0.5;
+}
+
+.section-divider .ornament span:nth-child(2) {
+    width: 10px; /* Ortadaki elmas daha belirgin */
+    height: 10px;
+    background-color: #c4a882;
+    opacity: 1;
+    /* Siyah üzerinde parlaması için hafif bir glow efekti */
+    box-shadow: 0 0 8px rgba(196, 168, 130, 0.6);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━
+   BOTTOM SECTION – IMAGE CARDS
+━━━━━━━━━━━━━━━━━━━━━━ */
+
+
+.bottom-heading {
+  text-align: center;
+  margin-bottom: calc(-1 * var(--space-xl));
+  margin-top: calc(-1 * var(--space-xl));
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background-color: #111111;
+}
+.eyebrow{
+  color: var(--clr-gold);
+ font-family: 'Cormorant Garamond', serif;
+  color: var(--cream);
+  line-height: 1.2;
+  color: var(--clr-gold-deep);
+  margin-top: 10px;
+}
+
+
+.bottom-heading h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  color: var(--cream);
+  line-height: 1.2;
+  color: var(--clr-gold-deep);
+  margin-top: 10px;
+}
+.bottom-heading h2 em { font-style: italic; color: var(--gold); }
+
+.bottom-section {
+  padding: 0 3rem 5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.bottom-heading {
+  text-align: center;
+  margin-bottom: 2.75rem;
+}
+.bottom-heading h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  color: var(--cream);
+  line-height: 1.2;
+}
+.bottom-heading h2 em { font-style: italic; color: var(--gold); }
+
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 1px;
+  background: rgba(201,169,110,0.12);
+  border: 1px solid rgba(201,169,110,0.12);
+}
+
+.img-card:nth-child(4) { grid-column: 1 / 2; }
+.img-card:nth-child(5) { grid-column: 2 / 3; }
+
+.img-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+  background: var(--dark-card);
+}
+
+.img-card .img-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.04);
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: brightness(0.45) saturate(0.7);
+}
+.img-card:hover .img-bg {
+  transform: scale(1.1);
+  filter: brightness(0.35) saturate(0.6);
+}
+
+.img-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10,8,5,0.92) 0%,
+    rgba(10,8,5,0.45) 45%,
+    transparent 100%
+  );
+  z-index: 1;
+  transition: opacity 0.4s;
+}
+.img-card:hover::before {
+  background: linear-gradient(
+    to top,
+    rgba(10,8,5,0.97) 0%,
+    rgba(10,8,5,0.6) 55%,
+    rgba(10,8,5,0.2) 100%
+  );
+}
+
+.img-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+  z-index: 2;
+}
+.img-card:hover::after { transform: scaleX(1); }
+
+.img-content {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 1.75rem 1.6rem;
+  z-index: 2;
+}
+
+.img-tag {
+  display: inline-block;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(201,169,110,0.35);
+  padding: 3px 10px;
+  margin-bottom: 0.75rem;
+  transform: translateY(6px);
+  opacity: 0;
+  transition: opacity 0.35s 0.05s, transform 0.35s 0.05s;
+}
+.img-card:hover .img-tag { opacity: 1; transform: translateY(0); }
+
+.img-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 0.6rem;
+  line-height: 1.25;
+}
+
+.img-desc {
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.35s;
+  opacity: 0;
+}
+.img-card:hover .img-desc {
+  max-height: 80px;
+  opacity: 1;
+}
+
+.img-arrow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  transform: translateX(-6px);
+  opacity: 0;
+  transition: opacity 0.35s 0.1s, transform 0.35s 0.1s;
+}
+.img-arrow::after {
+  content: '';
+  display: inline-block;
+  width: 22px; height: 1px;
+  background: var(--gold);
+  transition: width 0.3s;
+}
+.img-card:hover .img-arrow { opacity: 1; transform: translateX(0); }
+.img-card:hover .img-arrow:hover::after { width: 32px; }
+
+/* Placeholder backgrounds */
+.bg-1 { background: linear-gradient(135deg, #2a1f1a 0%, #1a1410 100%); }
+.bg-2 { background: linear-gradient(135deg, #1a2020 0%, #111817 100%); }
+.bg-3 { background: linear-gradient(135deg, #241a28 0%, #17111a 100%); }
+.bg-4 { background: linear-gradient(135deg, #201822 0%, #14101a 100%); }
+.bg-5 { background: linear-gradient(135deg, #1e1a14 0%, #151210 100%); }
+
+@media (max-width: 768px) {
+  .sh-grid { grid-template-columns: repeat(2, 1fr); }
+  .img-grid { grid-template-columns: 1fr; }
+  .img-card:nth-child(4),
+  .img-card:nth-child(5) { grid-column: auto; }
+  .top-section, .bottom-section { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .section-divider { padding: 0 1.25rem; }
 }

@@ -74,9 +74,27 @@ oran kaş, kalıcı makyaj ve kilo verme hizmetlerimizi inceleyin.{% endblock %}
   <div class="sh-cta">
     <a href="/contact" class="sh-cta-btn"><span>Randevu Al</span></a>
   </div>
-
 </section>
 
+
+
+<div class="section-divider">
+    <div class="ornament">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
+
+  <div class="bottom-heading">
+    <span class="eyebrow">Hizmetlerimizi Keşfedin <br></span>
+    <h2>Her Detayda <em>Mükemmellik</em></h2>
+    <div class="rule"><span class="diamond"></span></div>
+  </div>
+
+
+<section class="services-section">
     <div class="services-grid">
         {% for s in services %}
         <a href="/services/{{ s.slug }}" class="service-card {% if s.card_image %}service-card-has-bg{% endif %}">
@@ -91,5 +109,8 @@ oran kaş, kalıcı makyaj ve kilo verme hizmetlerimizi inceleyin.{% endblock %}
             </div>
         </a> {% endfor %}
     </div>
+</section>
+
+
 
 {% endblock %}
