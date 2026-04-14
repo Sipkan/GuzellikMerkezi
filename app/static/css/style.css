@@ -2578,15 +2578,46 @@ footer {
 }
 
 .blog-detail-cta-btn {
-    background: #fff !important;
-    color: var(--clr-dark) !important;
-    border-color: transparent !important;
+    display: inline-block;
+    padding: 14px 40px;
+    border: 1px solid #c4a882;
+    color: rgba(196, 168, 130, .25);
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.4s ease, color 0.4s ease;
 }
 
-.blog-detail-cta-btn:hover {
-    background: var(--clr-dark) !important;
-    color: #fff !important;
+.blog-detail-contact-cta-btn-2{
+    display: inline-block;
+    padding: 14px 40px;
+    border: 1px solid #c4a882;
+    color: #8a6a40;
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.4s ease, color 0.4s ease;
 }
+
+
+
+.blog-detail-cta-btn:hover {
+    background: #c4a882;
+    color: #fff;
+}
+
+.blog-detail-contact-cta-btn-2:hover{
+    background: #c4a882;
+    color: #fff;
+}
+
+
+
+
 
 /* Contact CTA */
 .blog-detail-contact-cta {
@@ -2625,4 +2656,4 @@ footer {
     .blog-detail-sidebar {
         position: static;
     }
-}
+}
