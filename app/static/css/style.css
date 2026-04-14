@@ -706,7 +706,7 @@ footer {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: url('/static/images/homepage-banner.png') center center / cover no-repeat;
+  background: url('/static/images/homepage-bg.png') center center / cover no-repeat;
   z-index: 0;
   border-radius: 14px;
 }
@@ -937,108 +937,134 @@ footer {
   font-size: 1.2rem;
 }
 
+/* ================= MINI-CARDS STRIP ================= */
 
-/* =============================================================
-   MİNİ KART BANDI (sayfa ortasındaki hizmet bağlantıları)
-   ============================================================= */
 .mini-cards-strip {
-  margin-top: 10px;
-  margin-bottom: -20px;
-  height: 10vw;
-  width: 99vw;
-  margin-left: -49.5vw;
-  left: 50%;
-  position: relative;
-  overflow: hidden;
-  border-radius: 14px;
+    margin-top: 10px;
+    margin-bottom: 0;           /* -20px kaldırıldı, overlap sorununu önler */
+    height: 10vw;
+    width: 99vw;
+    margin-left: -49.5vw;
+    left: 50%;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    border-radius: 14px;
+
+    /* Dikey hizalama için flexbox strip'e taşındı */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Background image layer */
 .mini-cards-strip-bg {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: url('/static/images/contact-us-img.webp') center center / cover no-repeat;
-  z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/static/images/contact-us-img.webp') center center / cover no-repeat;
+    z-index: 1;         /* en altta */
 }
 
+/* Dark semi-transparent overlay */
 .mini-cards-strip-overlay {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,.55);
-  backdrop-filter: blur(2px);
-  z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+    z-index: 2;         /* bg'nin üstünde, içeriğin altında */
 }
 
+/* Content row */
 .mini-cards-strip-content {
-  margin-top: 2.9vw;
-  margin-bottom: 2.9vw;
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 5px;
+    position: relative;
+    z-index: 3;         /* her şeyin üstünde */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 0;
+    width: 100%;
+    /* margin-top / margin-bottom kaldırıldı — strip kendi hizalıyor */
 }
 
+/* Each service item */
 .mini-card-item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  padding: 1.1rem 1.6rem;
-  text-decoration: none;
-  color: #fff;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  white-space: nowrap;
-  border-right: 1px solid rgba(255,255,255,.12);
-  transition:
-    background var(--transition-base),
-    color var(--transition-base),
-    letter-spacing var(--transition-base);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.1rem 1.6rem;
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+    transition: background 0.4s ease, color 0.4s ease, letter-spacing 0.4s ease;
 }
 
-.mini-card-item:last-child { border-right: none; }
+.mini-card-item:last-child {
+    border-right: none;
+}
 
 .mini-card-item:hover {
-  background: rgba(196,168,130,.25);
-  color: var(--clr-cream-soft);
-  letter-spacing: 2.2px;
+    background: rgba(196, 168, 130, 0.25);
+    color: #e8d5c4;
+    letter-spacing: 2.2px;
 }
 
+/* Icon before each label */
 .mini-card-icon {
-  font-size: 0.75rem;
-  opacity: 0.7;
-  transition: opacity var(--transition-base), transform var(--transition-base);
+    font-size: 0.75rem;
+    opacity: 0.7;
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .mini-card-item:hover .mini-card-icon {
-  opacity: 1;
-  transform: scale(1.2);
+    opacity: 1;
+    transform: scale(1.2);
 }
 
-.mini-card-label { font-family: var(--font-serif); }
+/* Label text */
+.mini-card-label {
+    font-family: Georgia, serif;
+}
 
+/* ── Tablet (max 768px) ── */
 @media (max-width: 768px) {
-  .mini-cards-strip-content {
-    flex-direction: column;
-    align-items: stretch;
-  }
+    .mini-cards-strip {
+        height: auto;
+        border-radius: 10px;
+        align-items: stretch;   /* sütun modunda tam genişlik */
+    }
 
-  .mini-card-item {
-    justify-content: center;
-    border-right: none;
-    border-bottom: 1px solid rgba(255,255,255,.1);
-    padding: 0.9rem 1.2rem;
-  }
+    .mini-cards-strip-content {
+        flex-direction: column;
+        align-items: stretch;
+    }
 
-  .mini-card-item:last-child { border-bottom: none; }
+    .mini-card-item {
+        justify-content: center;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 0.9rem 1.2rem;
+        white-space: normal;
+        text-align: center;
+        transition: color 0.4s ease, letter-spacing 0.4s ease;
+    }
+
+    .mini-card-item:last-child {
+        border-bottom: none;
+    }
 }
-
-
 /* =============================================================
    BEFORE / AFTER SLIDERS
    ============================================================= */
