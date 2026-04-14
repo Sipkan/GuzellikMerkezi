@@ -2423,3 +2423,206 @@ footer {
         height: 200px;
     }
 }
+
+
+/* =============================================================
+   BLOG PAGE – /blog  (full listing, mirrors services page)
+   ============================================================= */
+
+/* Override grid inside page-content (wider, no full-bleed bg) */
+.blog-grid-page {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 100%;
+    margin-top: var(--space-2xl);
+}
+
+@media (max-width: 900px) {
+    .blog-grid-page { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .blog-grid-page { grid-template-columns: 1fr; }
+}
+
+
+/* =============================================================
+   BLOG DETAIL – /blog/{slug}  (mirrors service_detail)
+   ============================================================= */
+
+/* Hero banner */
+.blog-detail-hero {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    min-height: 380px;
+    background-size: cover;
+    background-position: center 30%;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    border-radius: 14px 14px 0 0;
+    margin-bottom: 0;
+}
+
+.blog-detail-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(20,14,10,.85) 0%,
+        rgba(20,14,10,.55) 45%,
+        rgba(20,14,10,.15) 100%
+    );
+}
+
+.blog-detail-hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 3rem 4rem;
+    max-width: 780px;
+    color: #fff;
+}
+
+.blog-detail-badge {
+    display: inline-block;
+    background: rgba(196,168,130,.9);
+    color: #fff;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 2px;
+    font-weight: 600;
+    margin-bottom: 0.9rem;
+}
+
+.blog-detail-hero-content h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--clr-cream);
+    margin: 0 0 0.6rem;
+}
+
+.blog-detail-meta {
+    font-size: 0.8rem;
+    color: #c4b09a;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Two-column body */
+.blog-detail-body {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: var(--space-xl);
+    margin: var(--space-2xl) 0;
+    align-items: start;
+}
+
+/* Article content */
+.blog-detail-article {
+    color: var(--clr-text);
+    line-height: 1.85;
+}
+
+.blog-detail-article h2 {
+    font-size: 1.4rem;
+    color: var(--clr-dark);
+    margin: 1.8rem 0 0.6rem;
+    font-weight: 600;
+}
+
+.blog-detail-article p {
+    margin: 0 0 1rem;
+    color: #555;
+}
+
+.blog-detail-article ul {
+    padding-left: 1.4rem;
+    margin: 0 0 1rem;
+    color: #555;
+}
+
+.blog-detail-article li {
+    margin-bottom: 0.4rem;
+}
+
+.blog-detail-article strong {
+    color: var(--clr-dark);
+}
+
+/* Sidebar */
+.blog-detail-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    position: sticky;
+    top: 90px;
+}
+
+/* CTA box inside sidebar */
+.blog-detail-cta {
+    background: linear-gradient(135deg, var(--clr-gold) 0%, #a8875e 100%);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    color: #fff;
+    text-align: center;
+}
+
+.blog-detail-cta p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0 0 var(--space-md);
+    color: rgba(255,255,255,.9);
+}
+
+.blog-detail-cta-btn {
+    background: #fff !important;
+    color: var(--clr-dark) !important;
+    border-color: transparent !important;
+}
+
+.blog-detail-cta-btn:hover {
+    background: var(--clr-dark) !important;
+    color: #fff !important;
+}
+
+/* Contact CTA */
+.blog-detail-contact-cta {
+    background: var(--clr-cream-mid);
+    border: 1px solid rgba(196,168,130,.25);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    text-align: center;
+}
+
+.blog-detail-contact-text {
+    font-size: 0.9rem;
+    color: var(--clr-muted);
+    margin: 0 0 var(--space-md);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .blog-detail-hero {
+        min-height: 280px;
+        border-radius: 0;
+    }
+
+    .blog-detail-hero-content {
+        padding: 2rem var(--space-lg);
+    }
+
+    .blog-detail-hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .blog-detail-body {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-detail-sidebar {
+        position: static;
+    }
+}

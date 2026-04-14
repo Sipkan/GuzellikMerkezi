@@ -12,6 +12,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.database import get_session, init_db
 from app.db_models import CallbackRequest as CallbackRequestDB
 from app.services_data import SERVICES, SERVICES_BY_SLUG
+from app.blog_data import BLOG_POSTS, BLOG_BY_SLUG
 
 # Paths
 BASE_DIR = Path(__file__).resolve().parent
@@ -64,7 +65,18 @@ async def service_detail(request: Request, slug: str):
 @app.get("/blog", response_class=HTMLResponse)
 async def blog(request: Request):
     """Blog page."""
-    return templates.TemplateResponse(request, "blog.html")
+    return templates.TemplateResponse(request, "blog.html", {"posts": BLOG_POSTS})
+
+
+@app.get("/blog/{slug}", response_class=HTMLResponse)
+async def blog_detail(request: Request, slug: str):
+    """Individual blog detail page."""
+    post = BLOG_BY_SLUG.get(slug)
+    if not post:
+        from fastapi.responses import JSONResponse
+        return JSONResponse({"detail": "Post not found"}, status_code=404)
+    return templates.TemplateResponse(request, "blog_detail.html", {"post": post})
+
 
 
 @app.get("/contact", response_class=HTMLResponse)

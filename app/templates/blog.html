@@ -1,1 +1,39 @@
-<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus optio rerum pariatur possimus obcaecati et repellendus perferendis, voluptatem repellat tenetur debitis blanditiis itaque facere alias ipsam sequi beatae officiis corrupti?</p>
+{% extends "base.html" %}
+{% block title %}Blog & İpuçları - Pınar Seda Sayan Güzellik Dünyası | Güzellik Rehberi{% endblock %}
+{% block meta_description %}Pınar Seda Sayan Güzellik Dünyası blogu: lazer epilasyon, cilt bakımı, kaş tasarımı ve güzellik ipuçları hakkında uzman rehberleri.{% endblock %}
+{% block meta_keywords %}güzellik blog, lazer epilasyon ipuçları, cilt bakımı rehberi, altın oran kaş, güzellik tüyoları, Pınar Seda Sayan{% endblock %}
+{% block og_title %}Blog & İpuçları - Pınar Seda Sayan Güzellik Dünyası{% endblock %}
+{% block og_description %}Güzellik dünyasından uzman önerileri, bakım ipuçları ve sektör haberleri.{% endblock %}
+{% block content %}
+
+<section class="page-content">
+
+    <!-- PAGE HEADER (mirrors services-header) -->
+    <div class="services-header">
+        <div class="services-header-box">
+            <h1>Blog & İpuçları</h1>
+            <div class="services-header-divider"></div>
+            <p>Güzellik dünyasından uzman önerileri ve bakım rehberleri.<br>Sizin için özenle hazırlanmış içerikler.</p>
+        </div>
+    </div>
+
+    <!-- BLOG GRID -->
+    <div class="blog-grid blog-grid-page">
+        {% for post in posts %}
+        <a href="/blog/{{ post.slug }}" class="blog-card">
+            <div class="blog-card-img" style="background-image: url('/static/images/{{ post.image }}');">
+                <span class="blog-card-badge">{{ post.badge }}</span>
+            </div>
+            <div class="blog-card-body">
+                <p class="blog-card-meta">{{ post.date }} · {{ post.read_time }}</p>
+                <h3 class="blog-card-title">{{ post.title }}</h3>
+                <p class="blog-card-excerpt">{{ post.excerpt }}</p>
+                <span class="blog-card-link">Devamını Oku</span>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+
+</section>
+
+{% endblock %}

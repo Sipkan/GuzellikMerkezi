@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}{{ post.title }} - Pınar Seda Sayan Güzellik Dünyası{% endblock %}
+{% block meta_description %}{{ post.excerpt }}{% endblock %}
+{% block meta_keywords %}{{ post.badge }}, güzellik blog, güzellik ipuçları, Pınar Seda Sayan, Eyüpsultan güzellik{% endblock %}
+{% block og_title %}{{ post.title }} - Pınar Seda Sayan Güzellik Dünyası{% endblock %}
+{% block og_description %}{{ post.excerpt }}{% endblock %}
+{% block og_image %}/static/images/{{ post.image }}{% endblock %}
+{% block content %}
+
+<!-- BLOG HERO (mirrors service-hero) -->
+<section class="blog-detail-hero" style="background-image: url('/static/images/{{ post.image }}');">
+    <div class="blog-detail-hero-overlay"></div>
+    <div class="blog-detail-hero-content">
+        <span class="blog-detail-badge">{{ post.badge }}</span>
+        <h1>{{ post.title }}</h1>
+        <p class="blog-detail-meta">{{ post.date }} · {{ post.read_time }}</p>
+    </div>
+</section>
+
+<!-- BLOG BODY (mirrors service-info two-column layout) -->
+<section class="blog-detail-body">
+
+    <!-- MAIN ARTICLE -->
+    <div class="blog-detail-article">
+        {{ post.content | safe }}
+    </div>
+
+    <!-- SIDEBAR: key points (mirrors service-highlights) -->
+    <aside class="blog-detail-sidebar">
+        <div class="service-highlights">
+            <h3>Önemli Noktalar</h3>
+            <ul>
+                {% for item in post.highlights %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        {% if post.related_service %}
+        <div class="blog-detail-cta">
+            <p>Bu konuyla ilgili profesyonel hizmetimizi keşfedin.</p>
+            <a href="/services/{{ post.related_service }}" class="btn blog-detail-cta-btn">
+                Hizmeti İncele →
+            </a>
+        </div>
+        {% endif %}
+
+        <div class="blog-detail-contact-cta">
+            <p class="blog-detail-contact-text">Sorularınız mı var?</p>
+            <a href="/contact" class="btn">Bize Ulaşın</a>
+        </div>
+    </aside>
+
+</section>
+
+<!-- BACK BUTTON (mirrors service-back) -->
+<div class="service-back">
+    <a href="/blog" class="btn">← Tüm Yazılara Dön</a>
+</div>
+
+{% endblock %}
