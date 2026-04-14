@@ -61,6 +61,11 @@ async def service_detail(request: Request, slug: str):
         return JSONResponse({"detail": "Service not found"}, status_code=404)
     return templates.TemplateResponse(request, "service_detail.html", {"service": service})
 
+@app.get("/blog", response_class=HTMLResponse)
+async def blog(request: Request):
+    """Blog page."""
+    return templates.TemplateResponse(request, "blog.html")
+
 
 @app.get("/contact", response_class=HTMLResponse)
 async def contact(request: Request):
@@ -90,7 +95,6 @@ async def admin_dashboard(
         for cb in rows
     ]
     return templates.TemplateResponse(request, "admin_dashboard.html", {"callbacks": callbacks})
-
 
 @app.post("/callback")
 async def submit_callback(
